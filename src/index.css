@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@500&family=Space+Grotesk:wght@500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Space Grotesk", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+  
+  --color-soft-white: #FDFEFE;
+  --color-sky-blue: #8FCFEA;
+  --color-deep-navy: #0B2D4A;
+  --color-slate-gray: #64748B;
+  --color-warm-gold: #C9922F;
+
+  --shadow-soft: 0 1px 3px rgba(11,45,74,0.08), 0 8px 24px rgba(11,45,74,0.06);
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background: var(--color-soft-white);
+    min-height: 100vh;
+    color: var(--color-slate-gray);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    color: var(--color-deep-navy);
+  }
+}
+
+/* Custom slider style */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: #E5E5E5;
+  border-radius: 4px;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-warm-gold);
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.1s;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+/* Button styling system */
+.btn-signature {
+  border-radius: 4px;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 15px;
+  transition: all 200ms ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.btn-signature:focus-visible {
+  outline: 2px solid var(--color-deep-navy);
+  outline-offset: 2px;
+}
+
+.btn-signature:disabled {
+  background-color: #E5E7EB !important;
+  color: #9CA3AF !important;
+  border-color: #E5E7EB !important;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.btn-primary {
+  background-color: var(--color-warm-gold);
+  color: var(--color-deep-navy);
+  padding: 12px 26px;
+  border: none;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #B27F22;
+  transform: translateY(-2px);
+}
+
+.btn-primary:active:not(:disabled) {
+  background-color: #9C6E1D;
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid var(--color-deep-navy);
+  color: var(--color-deep-navy);
+  padding: 12px 26px;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: rgba(143,207,234,0.15);
+  transform: translateY(-2px);
+}
+
+.btn-secondary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  border: none;
+  color: var(--color-deep-navy);
+  padding: 12px 4px;
+}
+
+.btn-ghost:hover:not(:disabled) {
+  color: var(--color-warm-gold);
+  text-decoration: underline;
+}
+
+/* Inverted variations for dark backgrounds */
+.btn-secondary-inverted {
+  background-color: transparent;
+  border: 2px solid var(--color-soft-white);
+  color: var(--color-soft-white);
+  padding: 12px 26px;
+}
+
+.btn-secondary-inverted:hover:not(:disabled) {
+  background-color: rgba(253, 254, 254, 0.15);
+  transform: translateY(-2px);
+}
+
+.btn-secondary-inverted:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-ghost-inverted {
+  background-color: transparent;
+  border: none;
+  color: var(--color-soft-white);
+  padding: 12px 4px;
+}
+
+.btn-ghost-inverted:hover:not(:disabled) {
+  color: var(--color-warm-gold);
+  text-decoration: underline;
+}
+
+.text-scale-h1 { font-size: 56px; line-height: 1.1; }
+.text-scale-h2 { font-size: 40px; line-height: 1.2; }
+.text-scale-h3 { font-size: 28px; line-height: 1.3; }
+.text-scale-body-lg { font-size: 20px; line-height: 1.5; }
+.text-scale-body { font-size: 16px; line-height: 1.6; }
+.text-scale-caption { font-size: 13px; line-height: 1.5; }
+
+
+

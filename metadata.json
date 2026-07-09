@@ -1,0 +1,8 @@
+{
+  "name": "Remix: powerpulse",
+  "description": "Precision-engineered commercial and residential solar solutions with real-time interactive ROI calculator and AI support assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
