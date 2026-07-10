@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { ArrowRight, Building2, Factory, Home, MapPin, Zap } from 'lucide-react';
-
+import YellowStitchShaderBackground from './YellowStitchShaderBackground';
 interface GalleryViewProps {
   setCurrentView: (view: string) => void;
 }
@@ -47,6 +47,7 @@ const galleryProjects = [
 export default function GalleryView({ setCurrentView }: GalleryViewProps) {
   return (
     <div className="relative min-h-screen text-deep-navy w-full overflow-hidden">
+      <YellowStitchShaderBackground />
       <div className="relative z-10 pt-24 pb-20">
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-6 md:px-16">

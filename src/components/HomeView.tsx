@@ -333,10 +333,10 @@ export default function HomeView({
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-sky-blue/20 text-center border-t border-sky-blue/30 relative overflow-hidden">
+      <section className="py-24 bg-sky-blue/20 text-center border-t border-sky-blue/30 relative overflow-hidden isolate">
         <div 
           className="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-10"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&q=80&w=2000')" }}
+          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&q=80&w=2000')", zIndex: -1 }}
         />
         <motion.div 
           initial={{ opacity: 0, scale: 0.98 }}

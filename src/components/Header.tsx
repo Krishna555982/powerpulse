@@ -87,14 +87,7 @@ export default function Header({ currentView, setCurrentView }: HeaderProps) {
           Get Quote
         </button>
 
-        {/* Mobile menu trigger */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden btn-signature btn-ghost"
-          aria-label="Toggle Menu"
-        >
-          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+
       </div>
 
       {/* Mobile navigation panel */}

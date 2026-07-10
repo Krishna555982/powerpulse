@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Building2, Home, Sun, Factory, CheckCircle2, ArrowRight, X } from 'lucide-react';
-
+import YellowStitchShaderBackground from './YellowStitchShaderBackground';
 interface ServicesViewProps {
   setCurrentView: (view: string) => void;
   setChatbotOpen: (open: boolean) => void;
@@ -61,6 +61,7 @@ export default function ServicesView({
 
   return (
     <div className="relative min-h-screen text-deep-navy w-full">
+      <YellowStitchShaderBackground />
       <div className="relative z-10 pt-24 pb-16">
         
         {/* Services Header */}

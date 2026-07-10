@@ -1,7 +1,6 @@
 import { motion } from 'motion/react';
 import { Rocket, Eye, ShieldAlert, Check, HelpCircle } from 'lucide-react';
-import ShaderBackground from './ShaderBackground';
-
+import YellowStitchShaderBackground from './YellowStitchShaderBackground';
 interface AboutViewProps {
   setChatbotOpen: (open: boolean) => void;
   setChatbotWelcomeMessage: (message: string) => void;
@@ -15,7 +14,7 @@ export default function AboutView({ setChatbotOpen, setChatbotWelcomeMessage }: 
 
   return (
     <div className="relative min-h-screen text-deep-navy w-full">
-      <ShaderBackground />
+      <YellowStitchShaderBackground />
       <div className="relative z-10">
         
         {/* Intro Hero Section */}
