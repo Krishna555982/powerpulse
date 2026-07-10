@@ -169,8 +169,8 @@ export default function Chatbot({ isOpen, setIsOpen, initialMessage }: ChatbotPr
               {/* Bot Loading Indicator */}
               {isLoading && (
                 <div className="flex gap-2.5 justify-start">
-                  <div className="w-8 h-8 rounded-full bg-deep-navy flex items-center justify-center text-warm-gold shadow-sm flex-shrink-0 mt-0.5">
-                    <UserCheck className="h-4 w-4" />
+                  <div className="w-10 h-10 rounded-full bg-sky-blue/20 flex items-center justify-center border border-sky-blue/30 flex-shrink-0 shadow-inner mt-0.5">
+                    <UserCheck className="h-7 w-7 text-deep-navy" />
                   </div>
                   <div className="bg-white text-slate-gray p-3 rounded-lg rounded-tl-none text-sm border border-sky-blue/10 flex items-center gap-2 max-w-[75%]">
                     <Loader className="h-4 w-4 animate-spin text-deep-navy" />
@@ -197,10 +197,9 @@ export default function Chatbot({ isOpen, setIsOpen, initialMessage }: ChatbotPr
               <button
                 type="submit"
                 disabled={!inputValue.trim() || isLoading}
-                className="btn-signature btn-primary w-12 h-12 p-0 flex items-center justify-center"
-                aria-label="Send message"
+                className="bg-deep-navy text-soft-white hover:bg-opacity-90 disabled:opacity-50 disabled:cursor-not-allowed w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors shadow-soft"
               >
-                <Send className="h-4 w-4" />
+                <Send className="h-5 w-5" />
               </button>
             </form>
           </motion.div>
@@ -234,29 +233,17 @@ export default function Chatbot({ isOpen, setIsOpen, initialMessage }: ChatbotPr
         </motion.a>
 
         {/* Floating Action Trigger Button */}
-        <motion.button
+        <button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-16 h-16 btn-signature btn-primary flex items-center justify-center shadow-2xl relative p-0"
-          aria-label="Toggle Chat"
-          animate={{
-            boxShadow: [
-              '0px 4px 20px rgba(201, 146, 47, 0.4)',
-              '0px 4px 30px rgba(201, 146, 47, 0.6)',
-              '0px 4px 20px rgba(201, 146, 47, 0.4)',
-            ],
-          }}
-          transition={{
-            repeat: Infinity,
-            duration: 2.5,
-            ease: 'easeInOut',
-          }}
+          className="bg-deep-navy text-soft-white hover:bg-opacity-90 shadow-soft h-14 w-14 rounded-full flex items-center justify-center transition-transform hover:scale-105 active:scale-95"
+          aria-label="Toggle AI Assistant"
         >
           <MessageSquare className="h-7 w-7" />
           {/* Active notification badge */}
           {!isOpen && (
             <span className="absolute top-0 right-0 h-3 w-3 bg-deep-navy rounded-full border-2 border-white animate-pulse" />
           )}
-        </motion.button>
+        </button>
       </div>
     </div>
   );

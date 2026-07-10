@@ -1,7 +1,44 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Sun, DollarSign, PiggyBank, TrendingUp, CheckCircle } from 'lucide-react';
-import { motion } from 'motion/react';
+import { motion, useInView, useMotionValue, useSpring } from 'motion/react';
 import { PropertyType } from '../types';
+
+interface AnimatedNumberProps {
+  value: number;
+  prefix?: string;
+  suffix?: string;
+  decimals?: number;
+}
+
+function AnimatedNumber({ value, prefix = '', suffix = '', decimals = 0 }: AnimatedNumberProps) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  
+  const [randomStart] = useState(() => Math.floor(Math.random() * 80000));
+  const motionValue = useMotionValue(randomStart);
+  
+  const springValue = useSpring(motionValue, { damping: 30, stiffness: 60 });
+
+  useEffect(() => {
+    if (isInView) {
+      motionValue.set(value);
+    }
+  }, [isInView, value, motionValue]);
+
+  useEffect(() => {
+    return springValue.on('change', (latest) => {
+      if (ref.current) {
+        const formatted = Number(latest).toLocaleString(undefined, { 
+          minimumFractionDigits: decimals, 
+          maximumFractionDigits: decimals 
+        });
+        ref.current.textContent = `${prefix}${formatted}${suffix}`;
+      }
+    });
+  }, [springValue, prefix, suffix, decimals]);
+
+  return <span ref={ref}>{prefix}{randomStart.toLocaleString(undefined, { minimumFractionDigits: decimals, maximumFractionDigits: decimals })}{suffix}</span>;
+}
 
 interface SavingsCalculatorProps {
   onGetProposal?: (data: {
@@ -200,7 +237,7 @@ export default function SavingsCalculator({ onGetProposal }: SavingsCalculatorPr
                   Recommended System
                 </div>
                 <div className="text-2xl font-bold font-mono text-deep-navy group-hover:text-warm-gold transition-colors duration-200">
-                  {recommendedSystemSize} kW
+                  <AnimatedNumber value={recommendedSystemSize} suffix=" kW" />
                 </div>
               </div>
               <Sun className="h-7 w-7 text-deep-navy stroke-[1.5] group-hover:text-warm-gold group-hover:scale-110 transition-all duration-200" />
@@ -213,7 +250,7 @@ export default function SavingsCalculator({ onGetProposal }: SavingsCalculatorPr
                   Estimated Cost (Pre-Incentive)
                 </div>
                 <div className="text-2xl font-bold font-mono text-deep-navy group-hover:text-warm-gold transition-colors duration-200">
-                  ${estimatedCost.toLocaleString()}
+                  <AnimatedNumber value={estimatedCost} prefix="$" />
                 </div>
               </div>
               <DollarSign className="h-7 w-7 text-deep-navy stroke-[1.5] group-hover:text-warm-gold group-hover:scale-110 transition-all duration-200" />
@@ -226,7 +263,7 @@ export default function SavingsCalculator({ onGetProposal }: SavingsCalculatorPr
                   Annual Savings
                 </div>
                 <div className="text-2xl font-bold font-mono text-deep-navy group-hover:text-warm-gold transition-colors duration-200">
-                  ${annualSavings.toLocaleString()}
+                  <AnimatedNumber value={annualSavings} prefix="$" />
                 </div>
               </div>
               <PiggyBank className="h-7 w-7 text-deep-navy stroke-[1.5] group-hover:text-warm-gold group-hover:scale-110 transition-all duration-200" />
@@ -239,7 +276,7 @@ export default function SavingsCalculator({ onGetProposal }: SavingsCalculatorPr
                   Estimated Payback Period
                 </div>
                 <div className="text-2xl font-bold font-mono text-deep-navy group-hover:text-warm-gold transition-colors duration-200">
-                  {paybackPeriod} Years
+                  <AnimatedNumber value={paybackPeriod} suffix=" Years" decimals={1} />
                 </div>
               </div>
               <TrendingUp className="h-7 w-7 text-deep-navy stroke-[1.5] group-hover:text-warm-gold group-hover:scale-110 transition-all duration-200" />

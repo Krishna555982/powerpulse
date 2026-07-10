@@ -333,13 +333,17 @@ export default function HomeView({
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-sky-blue/20 text-center border-t border-sky-blue/30">
+      <section className="py-24 bg-sky-blue/20 text-center border-t border-sky-blue/30 relative overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-10"
+          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&q=80&w=2000')" }}
+        />
         <motion.div 
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto px-6"
+          className="max-w-4xl mx-auto px-6 relative z-10"
         >
           <h2 className="font-display text-scale-h2 font-bold uppercase text-deep-navy mb-6">
             Get a Free Solar Consultation Today

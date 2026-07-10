@@ -66,10 +66,16 @@ export default function ContactView({
 
   return (
     <div className={`w-full relative ${isCompact ? 'flex-1 flex flex-col bg-soft-white overflow-hidden min-h-full' : 'pt-24 pb-16 bg-soft-white overflow-hidden'}`}>
-      <div className="absolute inset-0 pointer-events-none z-0">
-        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#0B2D4A 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
-        <div className={`absolute top-0 right-0 rounded-full blur-[100px] -translate-y-1/4 translate-x-1/4 ${isCompact ? 'w-[600px] h-[600px] bg-sky-blue/20' : 'w-[800px] h-[800px] bg-sky-blue/20'}`}></div>
-        <div className={`absolute bottom-0 left-0 rounded-full blur-[100px] translate-y-1/4 -translate-x-1/4 ${isCompact ? 'w-[600px] h-[600px] bg-sky-blue/10' : 'w-[800px] h-[800px] bg-sky-blue/10'}`}></div>
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+        {/* Subtle dot pattern */}
+        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(#0B2D4A 1.5px, transparent 1.5px)', backgroundSize: '32px 32px' }}></div>
+        
+        {/* Ambient Glowing Orbs */}
+        <div className={`absolute top-0 right-0 rounded-full blur-[120px] opacity-70 mix-blend-multiply -translate-y-1/4 translate-x-1/4 ${isCompact ? 'w-[600px] h-[600px] bg-sky-blue/40' : 'w-[900px] h-[900px] bg-sky-blue/40'}`}></div>
+        
+        <div className={`absolute bottom-0 left-0 rounded-full blur-[120px] opacity-60 mix-blend-multiply translate-y-1/4 -translate-x-1/4 ${isCompact ? 'w-[500px] h-[500px] bg-warm-gold/30' : 'w-[800px] h-[800px] bg-warm-gold/30'}`}></div>
+        
+        <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full blur-[150px] opacity-40 mix-blend-multiply ${isCompact ? 'w-[800px] h-[400px] bg-[#8FCFEA]/30' : 'w-[1400px] h-[600px] bg-sky-blue/20'}`}></div>
       </div>
 
       {/* Header */}
@@ -314,7 +320,7 @@ export default function ContactView({
           {/* Right Column: Contact info */}
           <div className="lg:col-span-5 space-y-8">
             <div className="bg-deep-navy text-soft-white p-8 rounded-2xl shadow-soft space-y-6 border border-sky-blue/20">
-              <h3 className="font-display text-scale-h3 font-bold pb-3 border-b border-sky-blue/20">
+              <h3 className="font-display text-scale-h3 font-bold pb-3 border-b border-sky-blue/20 text-soft-white">
                 Contact Information
               </h3>
 

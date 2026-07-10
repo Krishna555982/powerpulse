@@ -77,30 +77,30 @@ export default function Footer({ setCurrentView, openChatbot }: FooterProps) {
         <div>
           <h4 className="font-bold text-warm-gold uppercase tracking-wider text-xs mb-4">Legal</h4>
           <ul className="space-y-2">
-            <li className="flex items-center gap-2">
-              <Shield className="h-4 w-4 text-warm-gold" />
+            <li>
               <a
                 href="#privacy"
                 onClick={(e) => {
                   e.preventDefault();
                   alert('Privacy Policy: Power Pulse Energy maintains the highest standards of data protection and privacy for our enterprise and residential clients. No data is shared with third parties.');
                 }}
-                className="btn-signature btn-ghost-inverted justify-start text-left w-full"
+                className="btn-signature btn-ghost-inverted flex items-center gap-2 w-full !justify-start text-left"
               >
-                Privacy Policy
+                <Shield className="h-4 w-4 text-warm-gold flex-shrink-0" />
+                <span>Privacy Policy</span>
               </a>
             </li>
-            <li className="flex items-center gap-2">
-              <FileText className="h-4 w-4 text-warm-gold" />
+            <li>
               <a
                 href="#terms"
                 onClick={(e) => {
                   e.preventDefault();
                   alert('Terms of Service: By using our solar estimator or consultation portals, you agree to receive professional renewable energy engineering advice from Power Pulse Energy representatives.');
                 }}
-                className="btn-signature btn-ghost-inverted justify-start text-left w-full"
+                className="btn-signature btn-ghost-inverted flex items-center gap-2 w-full !justify-start text-left"
               >
-                Terms of Service
+                <FileText className="h-4 w-4 text-warm-gold flex-shrink-0" />
+                <span>Terms of Service</span>
               </a>
             </li>
           </ul>
@@ -110,29 +110,29 @@ export default function Footer({ setCurrentView, openChatbot }: FooterProps) {
         <div>
           <h4 className="font-bold text-warm-gold uppercase tracking-wider text-xs mb-4">Resources</h4>
           <ul className="space-y-2">
-            <li className="flex items-center gap-2">
-              <Download className="h-4 w-4 text-warm-gold" />
+            <li>
               <a
                 href="#install"
                 onClick={(e) => {
                   e.preventDefault();
                   alert('Our comprehensive Installation Guide PDF is compiled uniquely for each project system size (kW) to verify structural and electrical integration compliance.');
                 }}
-                className="btn-signature btn-ghost-inverted justify-start text-left w-full"
+                className="btn-signature btn-ghost-inverted flex items-center gap-2 w-full !justify-start text-left"
               >
-                Installation Guide
+                <Download className="h-4 w-4 text-warm-gold flex-shrink-0" />
+                <span>Installation Guide</span>
               </a>
             </li>
-            <li className="flex items-center gap-2">
-              <HelpCircle className="h-4 w-4 text-warm-gold" />
+            <li>
               <button
                 onClick={(e) => {
                   e.preventDefault();
                   openChatbot();
                 }}
-                className="btn-signature btn-ghost-inverted justify-start text-left w-full"
+                className="btn-signature btn-ghost-inverted flex items-center gap-2 w-full !justify-start text-left"
               >
-                Support Center (AI Assistant)
+                <HelpCircle className="h-4 w-4 text-warm-gold flex-shrink-0" />
+                <span>Support Center (AI Assistant)</span>
               </button>
             </li>
           </ul>
