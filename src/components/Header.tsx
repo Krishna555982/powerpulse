@@ -87,7 +87,13 @@ export default function Header({ currentView, setCurrentView }: HeaderProps) {
           ))}
         </div>
 
-
+        {/* CTA Get Quote Button (Desktop only) */}
+        <button
+          onClick={() => handleNavClick('contact')}
+          className="hidden lg:flex btn-signature btn-primary shadow-soft"
+        >
+          Get Quote
+        </button>
 
       </div>
 
