@@ -35,9 +35,12 @@ export default function ShaderBackground() {
 
       void main() {
           vec2 uv = v_texCoord;
-          // Adjust aspect ratio for smooth waves across different screens
-          if(u_resolution.y > 0.0) {
+          
+          // Adjust aspect ratio to prevent stretching
+          if(u_resolution.x > u_resolution.y) {
               uv.x *= u_resolution.x / u_resolution.y;
+          } else {
+              uv.y *= u_resolution.y / u_resolution.x;
           }
 
           float time = u_time * 0.15;

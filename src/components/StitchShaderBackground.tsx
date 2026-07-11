@@ -66,6 +66,16 @@ export default function StitchShaderBackground() {
           vec2 uv = v_texCoord;
           vec2 mouse = u_mouse / u_resolution;
 
+          if(u_resolution.x > u_resolution.y) {
+              float aspect = u_resolution.x / u_resolution.y;
+              uv.x *= aspect;
+              mouse.x *= aspect;
+          } else {
+              float aspect = u_resolution.y / u_resolution.x;
+              uv.y *= aspect;
+              mouse.y *= aspect;
+          }
+
           // Azure Equinox Palette
           vec3 surface = vec3(0.968, 0.976, 1.0); // #f7f9ff
           vec3 primary = vec3(0.0, 0.157, 0.333); // #002855

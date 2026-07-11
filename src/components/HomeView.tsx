@@ -54,12 +54,14 @@ export default function HomeView({
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
-          <motion.img
+          <motion.video
             style={{ y: backgroundY }}
-            className="w-full h-[130%] object-cover select-none pointer-events-none filter brightness-90 absolute top-[-15%]"
-            referrerPolicy="no-referrer"
-            alt="A sprawling, high-end commercial solar power plant stretching to the horizon under a bright, clear sky"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8imxHTHFkVL44-R-BJdRQZku8feefeXPdKE6N5LmPiEjlQP2Kvhe_fces_pLVHHAnyGqIIfrvdgzwgDfqqlx5_iyVhVSxuLT1rgzamXdbCWJb1gZ63isOxK0iboljVcsh02yJVJlaiRAG5zqBwwrVj9CJdPL7SRuBusp83mfoK4ebxJ8t4hApN-yA81lqbM8ECmzqN4MlMWuJ_PH-aj5WN9J4DWpxGAdPYFGOTrU5ZZg-2cSpjkdGDUQ8QXAeVi0mUypKfKEsSWM"
+            className="w-full h-full lg:h-[130%] object-cover select-none pointer-events-none filter brightness-90 absolute top-0 lg:top-[-15%]"
+            autoPlay
+            loop
+            muted
+            playsInline
+            src="/powerpulse_video.mp4"
           />
           <div className="absolute inset-0 bg-sky-blue/40 backdrop-blur-[2px] bg-gradient-to-b from-soft-white/60 to-sky-blue/20"></div>
         </div>

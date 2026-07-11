@@ -48,21 +48,21 @@ export default function Header({ currentView, setCurrentView }: HeaderProps) {
           : 'bg-transparent border-transparent'
       }`}
     >
-      <div className="flex justify-between items-center h-20 md:h-24 lg:h-28 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto">
+      <div className="flex justify-center lg:justify-between items-center h-20 md:h-24 lg:h-28 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto relative">
+        {/* Mobile/Tablet Menu Toggle (Left) */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="lg:hidden p-2 text-deep-navy focus:outline-none absolute left-4 md:left-8 z-10"
+        >
+          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </button>
+
         {/* Logo */}
         <button
           onClick={() => handleNavClick('home')}
           className="flex items-center hover:opacity-90 active:scale-98 transition-transform h-full relative w-[200px] md:w-[240px] lg:w-[280px]"
         >
-          <Logo className="absolute left-0 top-1/2 -translate-y-1/2 w-[200px] h-[180px] md:w-[240px] md:h-[220px] lg:w-[280px] lg:h-[260px] max-w-none" />
-        </button>
-
-        {/* Mobile/Tablet Menu Toggle */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden p-2 text-deep-navy focus:outline-none ml-auto"
-        >
-          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          <Logo className="absolute left-1/2 lg:left-0 top-1/2 -translate-x-1/2 lg:translate-x-0 -translate-y-1/2 w-[200px] h-[180px] md:w-[240px] md:h-[220px] lg:w-[280px] lg:h-[260px] max-w-none" />
         </button>
 
         {/* Desktop Navigation */}
@@ -87,13 +87,6 @@ export default function Header({ currentView, setCurrentView }: HeaderProps) {
           ))}
         </div>
 
-        {/* CTA Get Quote Button */}
-        <button
-          onClick={() => handleNavClick('contact')}
-          className="hidden lg:flex btn-signature btn-primary shadow-soft"
-        >
-          Get Quote
-        </button>
 
 
       </div>
