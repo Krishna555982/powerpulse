@@ -138,7 +138,7 @@ export default function SavingsCalculator({ onGetProposal }: SavingsCalculatorPr
           </p>
         </div>
 
-        <div className="bg-soft-white p-6 md:p-8 rounded-2xl shadow-soft border border-sky-blue/20">
+        <div className="bg-soft-white p-4 lg:p-8 rounded-2xl shadow-soft border border-sky-blue/20">
           <div className="space-y-6">
             
             {/* Property Type Toggle */}
@@ -218,7 +218,7 @@ export default function SavingsCalculator({ onGetProposal }: SavingsCalculatorPr
 
       {/* Right Column: Dynamic Projections Display Box */}
       <div className="lg:col-span-5">
-        <div className="bg-soft-white p-8 rounded-2xl shadow-soft border border-sky-blue/20 space-y-6">
+        <div className="bg-soft-white p-6 lg:p-8 rounded-2xl shadow-soft border border-sky-blue/20 space-y-6">
           <div className="pb-4 border-b border-sky-blue/20">
             <h3 className="font-display text-xl font-bold tracking-tight text-deep-navy flex items-center gap-2">
               <span>Estimated Projection</span>

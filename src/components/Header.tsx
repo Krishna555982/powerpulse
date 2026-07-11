@@ -48,17 +48,25 @@ export default function Header({ currentView, setCurrentView }: HeaderProps) {
           : 'bg-transparent border-transparent'
       }`}
     >
-      <div className="flex justify-between items-center h-24 md:h-28 px-6 md:px-16 max-w-7xl mx-auto">
+      <div className="flex justify-between items-center h-20 md:h-24 lg:h-28 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto">
         {/* Logo */}
         <button
           onClick={() => handleNavClick('home')}
-          className="flex items-center hover:opacity-90 active:scale-98 transition-transform h-full relative w-[280px]"
+          className="flex items-center hover:opacity-90 active:scale-98 transition-transform h-full relative w-[200px] md:w-[240px] lg:w-[280px]"
         >
-          <Logo className="absolute left-0 top-1/2 -translate-y-1/2 w-[280px] h-[260px] max-w-none" />
+          <Logo className="absolute left-0 top-1/2 -translate-y-1/2 w-[200px] h-[180px] md:w-[240px] md:h-[220px] lg:w-[280px] lg:h-[260px] max-w-none" />
+        </button>
+
+        {/* Mobile/Tablet Menu Toggle */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="lg:hidden p-2 text-deep-navy focus:outline-none ml-auto"
+        >
+          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-8">
           {navItems.map((item) => (
             <button
               key={item.id}
@@ -82,7 +90,7 @@ export default function Header({ currentView, setCurrentView }: HeaderProps) {
         {/* CTA Get Quote Button */}
         <button
           onClick={() => handleNavClick('contact')}
-          className="hidden md:flex btn-signature btn-primary shadow-soft"
+          className="hidden lg:flex btn-signature btn-primary shadow-soft"
         >
           Get Quote
         </button>
@@ -98,7 +106,7 @@ export default function Header({ currentView, setCurrentView }: HeaderProps) {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="md:hidden bg-soft-white border-b border-sky-blue/20 overflow-hidden"
+            className="lg:hidden bg-soft-white border-b border-sky-blue/20 overflow-hidden"
           >
             <div className="flex flex-col gap-4 px-6 py-6">
               {navItems.map((item) => (

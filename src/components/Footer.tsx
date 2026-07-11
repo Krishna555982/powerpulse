@@ -13,13 +13,13 @@ export default function Footer({ setCurrentView, openChatbot }: FooterProps) {
   };
 
   return (
-    <footer className="w-full py-16 bg-deep-navy border-t border-sky-blue/20 text-soft-white font-sans text-sm">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 px-6 md:px-16 max-w-7xl mx-auto">
+    <footer className="w-full py-10 lg:py-16 bg-deep-navy border-t border-sky-blue/20 text-soft-white font-sans text-sm">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-8 px-6 lg:px-16 max-w-7xl mx-auto">
         
         {/* Branding */}
         <div className="col-span-1 md:col-span-1">
-          <div className="mb-6 inline-block relative h-24 w-[280px]">
-            <Logo className="absolute left-0 top-1/2 -translate-y-1/2 h-[260px] w-[280px] max-w-none -ml-4" />
+          <div className="mb-6 inline-block relative h-20 lg:h-24 w-[200px] lg:w-[280px]">
+            <Logo className="absolute left-0 top-1/2 -translate-y-1/2 h-[180px] lg:h-[260px] w-[200px] lg:w-[280px] max-w-none -ml-4" />
           </div>
           <p className="text-sky-blue/80 mb-6 max-w-xs leading-relaxed">
             Precision engineering and industry-leading renewable energy infrastructure for a sustainable future.
@@ -140,7 +140,7 @@ export default function Footer({ setCurrentView, openChatbot }: FooterProps) {
 
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-16 mt-12 pt-8 border-t border-sky-blue/20 text-sky-blue/60 text-center">
+      <div className="max-w-7xl mx-auto px-6 lg:px-16 mt-8 lg:mt-12 pt-8 border-t border-sky-blue/20 text-sky-blue/60 text-center">
         © {new Date().getFullYear()} Power Pulse Energy. All rights reserved.
       </div>
     </footer>

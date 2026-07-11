@@ -65,8 +65,8 @@ export default function ServicesView({
       <div className="relative z-10 pt-24 pb-16">
         
         {/* Services Header */}
-        <section className="py-16">
-          <div className="max-w-7xl mx-auto px-6 md:px-16 text-center">
+        <section className="py-12 lg:py-16">
+          <div className="max-w-7xl mx-auto px-6 lg:px-16 text-center">
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
@@ -85,7 +85,7 @@ export default function ServicesView({
         </section>
 
         {/* Services Grid */}
-        <section className="py-12 max-w-7xl mx-auto px-6 md:px-16">
+        <section className="py-8 lg:py-12 max-w-7xl mx-auto px-6 lg:px-16">
           <motion.div 
             className="grid grid-cols-1 md:grid-cols-2 gap-12"
             initial="hidden"
@@ -135,7 +135,7 @@ export default function ServicesView({
         </section>
 
         {/* Call to Action Bar */}
-        <section className="bg-sky-blue/10 backdrop-blur-md py-16 mx-6 md:mx-16 rounded-2xl text-deep-navy overflow-hidden relative shadow-soft border border-sky-blue/20 mt-8">
+        <section className="bg-sky-blue/10 backdrop-blur-md py-12 lg:py-16 mx-6 lg:mx-16 rounded-2xl text-deep-navy overflow-hidden relative shadow-soft border border-sky-blue/20 mt-8">
           <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#0B2D4A 1px, transparent 1px)', backgroundSize: '24px 24px' }}></div>
           <div className="relative z-10 max-w-5xl mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
             <div className="space-y-2">

@@ -18,7 +18,7 @@ export default function AboutView({ setChatbotOpen, setChatbotWelcomeMessage }: 
       <div className="relative z-10">
         
         {/* Intro Hero Section */}
-        <section className="pt-32 pb-16 px-6 md:px-16 max-w-7xl mx-auto">
+        <section className="pt-24 lg:pt-32 pb-12 lg:pb-16 px-6 lg:px-16 max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
             
             {/* Left Content Column */}
@@ -74,7 +74,7 @@ export default function AboutView({ setChatbotOpen, setChatbotWelcomeMessage }: 
         </section>
 
         {/* Philosophy Bento Bento Section */}
-        <section className="py-16 px-6 md:px-16 max-w-7xl mx-auto">
+        <section className="py-12 lg:py-16 px-6 lg:px-16 max-w-7xl mx-auto">
           <div className="mb-12">
             <h2 className="font-display text-scale-h2 font-bold text-deep-navy mb-4 uppercase">
               Our Core Philosophy
@@ -191,7 +191,7 @@ export default function AboutView({ setChatbotOpen, setChatbotWelcomeMessage }: 
         </section>
 
         {/* Our Team Section */}
-        <section className="py-16 px-6 md:px-16 max-w-7xl mx-auto">
+        <section className="py-12 lg:py-16 px-6 lg:px-16 max-w-7xl mx-auto">
           <div className="mb-12">
             <h2 className="font-display text-scale-h2 font-bold text-deep-navy mb-4 uppercase">
               Our Team

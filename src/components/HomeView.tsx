@@ -64,7 +64,7 @@ export default function HomeView({
           <div className="absolute inset-0 bg-sky-blue/40 backdrop-blur-[2px] bg-gradient-to-b from-soft-white/60 to-sky-blue/20"></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-16 w-full text-center text-deep-navy py-16">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-16 w-full text-center text-deep-navy py-12 lg:py-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -124,9 +124,9 @@ export default function HomeView({
       </section>
 
       {/* Services Grid Section */}
-      <section className="py-24 bg-soft-white relative">
+      <section className="py-16 lg:py-24 bg-soft-white relative">
         <motion.div 
-          className="max-w-7xl mx-auto px-6 md:px-16"
+          className="max-w-7xl mx-auto px-6 lg:px-16"
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-50px" }}
@@ -269,9 +269,9 @@ export default function HomeView({
       <section
         ref={calculatorSectionRef}
         id="calculator"
-        className="py-24 bg-sky-blue/10 relative overflow-hidden scroll-mt-20 border-b border-sky-blue/20"
+        className="py-16 lg:py-24 bg-sky-blue/10 relative overflow-hidden scroll-mt-20 border-b border-sky-blue/20"
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-16 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 lg:px-16 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -287,8 +287,8 @@ export default function HomeView({
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-24 bg-soft-white text-deep-navy relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 md:px-16 relative z-10">
+      <section className="py-16 lg:py-24 bg-soft-white text-deep-navy relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 lg:px-16 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -333,7 +333,7 @@ export default function HomeView({
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-sky-blue/20 text-center border-t border-sky-blue/30 relative overflow-hidden isolate">
+      <section className="py-16 lg:py-24 bg-sky-blue/20 text-center border-t border-sky-blue/30 relative overflow-hidden isolate">
         <div 
           className="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-10"
           style={{ backgroundImage: "url('https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&q=80&w=2000')", zIndex: -1 }}
