@@ -119,12 +119,6 @@ export default function Header({ currentView, setCurrentView }: HeaderProps) {
                   {item.label}
                 </button>
               ))}
-              <button
-                onClick={() => handleNavClick('contact')}
-                className="w-full btn-signature btn-primary"
-              >
-                Get Quote
-              </button>
             </div>
           </motion.div>
         )}
