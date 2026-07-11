@@ -206,7 +206,7 @@ export default function Chatbot({ isOpen, setIsOpen, initialMessage }: ChatbotPr
         )}
       </AnimatePresence>
 
-      <div className="flex gap-4 items-center shrink-0">
+      <div className="flex flex-col md:flex-row gap-4 items-center shrink-0">
         {/* WhatsApp Support Button */}
         <motion.a
           href="https://wa.me/1234567890?text=I%20am%20interested%20in%20PowerPulse%20solar%20solutions%20and%20support!"

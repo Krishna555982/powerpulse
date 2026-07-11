@@ -1,78 +1,15 @@
 import { Zap, Shield, HelpCircle, FileText, Download } from 'lucide-react';
-import Logo from './Logo';
 
 interface FooterProps {
   setCurrentView: (view: string) => void;
   openChatbot: () => void;
 }
 
-export default function Footer({ setCurrentView, openChatbot }: FooterProps) {
-  const handleNavClick = (viewId: string) => {
-    setCurrentView(viewId);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
+export default function Footer({ openChatbot }: FooterProps) {
   return (
     <footer className="w-full py-10 lg:py-16 bg-deep-navy border-t border-sky-blue/20 text-soft-white font-sans text-sm">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-8 px-6 lg:px-16 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 px-6 lg:px-16 max-w-7xl mx-auto">
         
-        {/* Branding */}
-        <div className="col-span-1 md:col-span-1">
-          <div className="mb-6 inline-block relative h-20 lg:h-24 w-[200px] lg:w-[280px]">
-            <Logo className="absolute left-0 top-1/2 -translate-y-1/2 h-[180px] lg:h-[260px] w-[200px] lg:w-[280px] max-w-none -ml-4" />
-          </div>
-          <p className="text-sky-blue/80 mb-6 max-w-xs leading-relaxed">
-            Precision engineering and industry-leading renewable energy infrastructure for a sustainable future.
-          </p>
-        </div>
-
-        {/* Links Column 1: Navigation */}
-        <div>
-          <h4 className="font-bold text-warm-gold uppercase tracking-wider text-xs mb-4">Navigation</h4>
-          <ul className="space-y-2">
-            <li>
-              <button
-                onClick={() => handleNavClick('home')}
-                className="btn-signature btn-ghost-inverted justify-start text-left w-full"
-              >
-                Home & Calculator
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => handleNavClick('about')}
-                className="btn-signature btn-ghost-inverted justify-start text-left w-full"
-              >
-                About Our Philosophy
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => handleNavClick('services')}
-                className="btn-signature btn-ghost-inverted justify-start text-left w-full"
-              >
-                Solar Services
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => handleNavClick('gallery')}
-                className="btn-signature btn-ghost-inverted justify-start text-left w-full"
-              >
-                Project Gallery
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => handleNavClick('contact')}
-                className="btn-signature btn-ghost-inverted justify-start text-left w-full"
-              >
-                Get Quote & Proposal
-              </button>
-            </li>
-          </ul>
-        </div>
-
         {/* Links Column 2: Legal */}
         <div>
           <h4 className="font-bold text-warm-gold uppercase tracking-wider text-xs mb-4">Legal</h4>
