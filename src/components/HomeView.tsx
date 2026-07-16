@@ -85,7 +85,7 @@ export default function HomeView({
               </span>
             </h1>
 
-            <div className="font-sans text-scale-body-lg max-w-3xl mx-auto text-slate-gray leading-relaxed space-y-4">
+            <div className="font-sans text-scale-body-lg max-w-3xl mx-auto text-deep-navy leading-relaxed space-y-4">
               <p>
                 Your reliable partner for residential, commercial, industrial, and agricultural solar solutions. 
               </p>
