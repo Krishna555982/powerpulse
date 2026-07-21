@@ -28,19 +28,7 @@ export default function HomeView({
     }
   };
 
-  const handleGetProposal = (data: {
-    propertyType: PropertyType;
-    monthlyBill: number;
-    roofArea: number;
-    systemSize: number;
-    cost: number;
-    savings: number;
-    payback: number;
-  }) => {
-    onSelectProposalData(data);
-    setCurrentView('contact');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+
 
   const handleRequestConsultation = () => {
     setChatbotWelcomeMessage("Hello! Let's arrange a free, personalized technical consultation for your project. To start, what is your name and property address?");
@@ -87,7 +75,7 @@ export default function HomeView({
 
             <div className="font-sans text-scale-body-lg max-w-3xl mx-auto text-deep-navy leading-relaxed space-y-4">
               <p>
-                Your reliable partner for residential, commercial, industrial, and agricultural solar solutions. 
+                Your reliable partner for residential, commercial, industrial, and agricultural solar solutions.
               </p>
               <p>
                 We help homeowners, factories, farms, villas, rural areas, and large-scale projects switch to clean, affordable, and sustainable solar power.
@@ -127,7 +115,7 @@ export default function HomeView({
 
       {/* Services Grid Section */}
       <section className="py-16 lg:py-24 bg-soft-white relative">
-        <motion.div 
+        <motion.div
           className="max-w-7xl mx-auto px-6 lg:px-16"
           initial="hidden"
           whileInView="show"
@@ -142,9 +130,9 @@ export default function HomeView({
           }}
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            
+
             {/* Box 1 */}
-            <motion.div 
+            <motion.div
               variants={{
                 hidden: { opacity: 0, y: 40 },
                 show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } }
@@ -175,7 +163,7 @@ export default function HomeView({
             </motion.div>
 
             {/* Box 2 */}
-            <motion.div 
+            <motion.div
               variants={{
                 hidden: { opacity: 0, y: 40 },
                 show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } }
@@ -203,7 +191,7 @@ export default function HomeView({
             </motion.div>
 
             {/* Box 3 */}
-            <motion.div 
+            <motion.div
               variants={{
                 hidden: { opacity: 0, y: 40 },
                 show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } }
@@ -234,7 +222,7 @@ export default function HomeView({
             </motion.div>
 
             {/* Box 4 */}
-            <motion.div 
+            <motion.div
               variants={{
                 hidden: { opacity: 0, y: 40 },
                 show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } }
@@ -273,25 +261,25 @@ export default function HomeView({
         id="calculator"
         className="py-16 lg:py-24 bg-sky-blue/10 relative overflow-hidden scroll-mt-20 border-b border-sky-blue/20"
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-16 relative z-10">
-          <motion.div 
+        <div className="w-full mx-auto px-4 lg:px-8 xl:px-12 relative z-10">
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6 }}
             className="mb-12 text-center"
           >
-             <h2 className="font-display text-scale-h2 font-bold uppercase text-deep-navy mb-4">Calculate Your Savings</h2>
-             <p className="font-sans text-scale-body-lg text-slate-gray">Estimate your potential energy savings by switching to solar power with us.</p>
+            <h2 className="font-display text-scale-h2 font-bold uppercase text-deep-navy mb-4">Calculate Your Savings</h2>
+            <p className="font-sans text-scale-body-lg text-slate-gray">Estimate your potential energy savings by switching to solar power with us.</p>
           </motion.div>
-          <SavingsCalculator onGetProposal={handleGetProposal} />
+          <SavingsCalculator />
         </div>
       </section>
 
       {/* Why Choose Us Section */}
       <section className="py-16 lg:py-24 bg-soft-white text-deep-navy relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-16 relative z-10">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
@@ -318,7 +306,7 @@ export default function HomeView({
               'Fast installation',
               'Dedicated customer support'
             ].map((reason, idx) => (
-              <motion.div 
+              <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -336,11 +324,11 @@ export default function HomeView({
 
       {/* CTA Section */}
       <section className="py-16 lg:py-24 bg-sky-blue/20 text-center border-t border-sky-blue/30 relative overflow-hidden isolate">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-10"
           style={{ backgroundImage: "url('https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&q=80&w=2000')", zIndex: -1 }}
         />
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-50px" }}
@@ -351,7 +339,7 @@ export default function HomeView({
             Get a Free Solar Consultation Today
           </h2>
           <p className="font-sans text-scale-body-lg text-slate-gray mb-10">
-            Looking for the best solar panel installation company? <br className="hidden md:block"/>
+            Looking for the best solar panel installation company? <br className="hidden md:block" />
             Contact Power Pulse Energy and get a customized solar quote today.
           </p>
           <button
