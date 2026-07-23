@@ -28,11 +28,11 @@ function FormattedNumber({ value, prefix = '', suffix = '', decimals = 0 }: Anim
 export default function SavingsCalculator() {
   // Form State
   const [method, setMethod] = useState<CalculationMethod>('bill');
-  const [inputValue, setInputValue] = useState<number>(5000);
+  const [inputValue, setInputValue] = useState<number | ''>(5000);
   const [location, setLocation] = useState<Location>('TG');
   const [customerType, setCustomerType] = useState<CustomerType>('residential');
   const [applySubsidy, setApplySubsidy] = useState<boolean>(true);
-  const [unitCost, setUnitCost] = useState<number>(5.5);
+  const [unitCost, setUnitCost] = useState<number | ''>(5.5);
   const [areaUnit, setAreaUnit] = useState<'sqft' | 'sqm'>('sqft');
   
   // View State
@@ -47,14 +47,18 @@ export default function SavingsCalculator() {
     const unitsPerKwpMonthly = 138; // approx 4.6 units/day * 30
     const dailyPeakSunHours = 5.7;
 
+    const safeInputValue = Number(inputValue) || 0;
+    const safeUnitCost = Number(unitCost) || 1; // avoid division by zero
+    const actualUnitCost = Number(unitCost) || 0;
+
     if (method === 'bill') {
-      monthlyUnits = inputValue / unitCost;
+      monthlyUnits = safeInputValue / safeUnitCost;
       plantSizeKwp = monthlyUnits / unitsPerKwpMonthly;
     } else if (method === 'units') {
-      monthlyUnits = inputValue;
+      monthlyUnits = safeInputValue;
       plantSizeKwp = monthlyUnits / unitsPerKwpMonthly;
     } else if (method === 'area') {
-      const areaInSqFt = areaUnit === 'sqm' ? inputValue * 10.764 : inputValue;
+      const areaInSqFt = areaUnit === 'sqm' ? safeInputValue * 10.764 : safeInputValue;
       plantSizeKwp = areaInSqFt / 100; // ~100 sqft per 1 kWp
       monthlyUnits = plantSizeKwp * unitsPerKwpMonthly;
     }
@@ -67,9 +71,9 @@ export default function SavingsCalculator() {
     const annualGeneration = monthlyUnits * 12;
     const lifetimeGeneration = annualGeneration * 28; // approx 30 years with degradation
 
-    const monthlySavings = monthlyUnits * unitCost;
-    const annualSavings = annualGeneration * unitCost;
-    const lifetimeSavings = lifetimeGeneration * unitCost;
+    const monthlySavings = monthlyUnits * actualUnitCost;
+    const annualSavings = annualGeneration * actualUnitCost;
+    const lifetimeSavings = lifetimeGeneration * actualUnitCost;
 
     const costPerKwp = customerType === 'residential' ? 60000 : 50000;
     const systemCost = plantSizeKwp * costPerKwp;
@@ -199,7 +203,7 @@ export default function SavingsCalculator() {
                   <input 
                     type="number" 
                     value={inputValue}
-                    onChange={(e) => setInputValue(Number(e.target.value))}
+                    onChange={(e) => setInputValue(e.target.value === '' ? '' : Number(e.target.value))}
                     className={`w-full bg-white border border-slate-200 rounded-xl px-4 py-2 font-bold text-deep-navy focus:outline-none focus:border-warm-gold focus:ring-2 focus:ring-warm-gold/20 ${method === 'bill' ? 'pl-8' : 'pr-16'}`}
                   />
                   {method === 'units' && <span className="absolute right-8 top-1/2 -translate-y-1/2 text-slate-400 font-medium text-sm pointer-events-none">kWh</span>}
@@ -301,7 +305,7 @@ export default function SavingsCalculator() {
                       type="number"
                       step="0.1"
                       value={unitCost}
-                      onChange={(e) => setUnitCost(Number(e.target.value))}
+                      onChange={(e) => setUnitCost(e.target.value === '' ? '' : Number(e.target.value))}
                       className="w-20 bg-white border border-slate-200 rounded-lg px-2 py-1.5 font-bold text-deep-navy text-lg text-center focus:outline-none focus:border-warm-gold"
                     />
                   </div>
@@ -312,7 +316,7 @@ export default function SavingsCalculator() {
                   min="2"
                   max="15"
                   step="0.1"
-                  value={unitCost}
+                  value={unitCost === '' ? 2 : unitCost}
                   onChange={(e) => setUnitCost(Number(e.target.value))}
                   className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-warm-gold"
                 />
